@@ -21,7 +21,7 @@
  */
 
 import QtQuick 2.0
-import QtQuick.Controls 1.2 as QtControls
+import QtQuick.Controls 1.2
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.1
 
@@ -74,7 +74,7 @@ GridLayout
 		text: "Interval [ms]:";
 		}
 		    
-		QtControls.SpinBox {				
+		SpinBox {				
 			maximumValue : 600000
 			minimumValue : 1000
 			stepSize : 1000
