@@ -7,8 +7,8 @@ X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
 X-Plasma-DefaultSize=160,260
  
-X-KDE-PluginInfo-Author=Ilia Ostapenko
-X-KDE-PluginInfo-Email=jacobtey@gmail.com
+X-KDE-PluginInfo-Author=Ilya Ostapenko
+X-KDE-PluginInfo-Email=ostapenko.public@gmail.com
 X-KDE-PluginInfo-Website=http:
 X-KDE-PluginInfo-Category=Date and Time
 X-KDE-PluginInfo-Name=clockIN-n-stdOUT
