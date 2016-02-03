@@ -97,7 +97,7 @@ Item {
         appName: plasmoid.configuration.Command;
 	}
 	Timer {
-		interval: 60000; 
+		interval: plasmoid.configuration.Interval;
 		running: true;
 		repeat: true;
 		onTriggered: out.text = launcher.launchScriptGetSTDOUT(); 
