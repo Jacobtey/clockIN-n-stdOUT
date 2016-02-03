@@ -21,7 +21,7 @@
  */
 
 import QtQuick 2.0
-import QtQuick.Controls 1.2
+import QtQuick.Controls 1.2 as QtControls
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.1
 
@@ -69,6 +69,21 @@ GridLayout
             plasmoid.configuration.Command = text;
             }
         }
+        
+	Label {	     		
+		text: "Interval [ms]:";
+		}
+		    
+		QtControls.SpinBox {				
+			maximumValue : 600000
+			minimumValue : 1000
+			stepSize : 1000
+			value : plasmoid.configuration.Interval			
+		onEditingFinished: {
+	                plasmoid.configuration.Interval = value
+		        }
+			}        
+        
         Item {Layout.fillHeight: true}
     }
     
