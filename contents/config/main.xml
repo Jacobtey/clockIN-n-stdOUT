@@ -18,6 +18,10 @@
       <label>Run Command</label>
       <default>uname -a</default>
     </entry>
+    <entry name="Interval" type="Integer">
+      <label>Interval</label>
+      <default>60000</default>
+    </entry>
   </group>
 
 </kcfg>
