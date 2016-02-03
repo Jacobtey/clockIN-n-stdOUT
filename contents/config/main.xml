@@ -6,13 +6,17 @@
   <kcfgfile name=""/>
 
   <group name="General">
+    <entry name="textFont" type="String">
+      <label>Font</label>
+      <default>Arial</default>
+    </entry>
+    <entry name="textColor" type="String">
+      <label>Text color</label>
+      <default>white</default>
+    </entry>
     <entry name="Command" type="String">
       <label>Run Command</label>
-      <default>dw.py</default>
-    </entry>
-    <entry name="Interval" type="Integer">
-      <label>Interval</label>
-      <default>1000</default>
+      <default>uname -a</default>
     </entry>
   </group>
 
