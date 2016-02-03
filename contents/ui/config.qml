@@ -1,5 +1,7 @@
 /*
+    Copyright 2015 Robert <robspamm@fastmail.fm>
     Copyright 2015 David Edmundson <davidedmundson@kde.org>
+    Copyright 2016 Ilya Ostapenko <ostapenko.public@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
