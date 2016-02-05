@@ -16,11 +16,11 @@
     </entry>
     <entry name="Command" type="String">
       <label>Run Command</label>
-      <default>uname</default>
+      <default>uname -r</default>
     </entry>
-    <entry name="Interval" type="Integer">
-      <label>Interval</label>
-      <default>60000</default>
+    <entry name="updateInterval" type="Double">
+      <default>60.0</default>
+    </entry>
     </entry>
   </group>
 
