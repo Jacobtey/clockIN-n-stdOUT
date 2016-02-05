@@ -21,14 +21,16 @@
  */
 
 import QtQuick 2.0
-import QtQuick.Controls 1.4
+import QtQuick.Controls 1.2
 import QtQuick.Dialogs 1.2
 import QtQuick.Layouts 1.1
 
-GridLayout 
-{    
+GridLayout {    
     property alias cfg_textFont: fontDialog.font
     property alias cfg_textColor: colorPicker.chosenColor
+    property alias cfg_Command: textField.text
+    property alias cfg_updateInterval: updateIntervalSpinBox.value
+
 
     columns: 2
     Label {
@@ -57,32 +59,28 @@ GridLayout
             id: colorPicker
         }
         
-    
         Label {	     		
             text: "Command:";
         }
 		    
-        TextField {		  
+        TextField {
+            id: textField
             placeholderText: "Command"
             text : plasmoid.configuration.Command;			
-            onTextChanged: {
-            plasmoid.configuration.Command = text;
-            }
+            
         }
-        
-	Label {	     		
-		text: "Interval [ms]:";
-		}
-		    
-		SpinBox {				
-			maximumValue : 600000
-			minimumValue : 1000
-			stepSize : 1000
-			value : plasmoid.configuration.Interval			
-		onEditingFinished: {
-	                plasmoid.configuration.Interval = value
-		        }
-			}        
+
+        Label {
+            text: i18n("Update interval:")
+        }
+
+        SpinBox {
+            id: updateIntervalSpinBox
+            decimals: 1
+            stepSize: 0.1
+            minimumValue: 0.1
+            suffix: i18nc("Abbreviation for seconds", "s")
+			} 
         
         Item {Layout.fillHeight: true}
     }
