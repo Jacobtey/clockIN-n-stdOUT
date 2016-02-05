@@ -44,7 +44,7 @@ Item {
         text: Qt.formatTime( dataSource.data["Local"]["DateTime"],"hh:mm" )
         anchors {
             top: parent.top;
-            right: parent.right;
+            horizontalCenter: parent.horizontalCenter;
         }
     }
     
@@ -84,7 +84,7 @@ Item {
             right: date.right;
         }
     }
-       
+     
     PlasmaCore.DataSource {
         id: dataSource
         engine: "time"
@@ -97,7 +97,7 @@ Item {
         appName: plasmoid.configuration.Command;
 	}
 	Timer {
-		interval: plasmoid.configuration.Interval;
+		interval: 1000 * plasmoid.configuration.updateInterval;
 		running: true;
 		repeat: true;
 		onTriggered: out.text = launcher.launchScriptGetSTDOUT(); 
