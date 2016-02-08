@@ -4,4 +4,4 @@
     echo -e "plasma `plasmashell -v | grep plasmashel | cut -c 13-`" "kapp `dolphin -v | grep dolphin | cut -c 10-`" "kde `kf5-config -v | grep KDE | cut -c 17-`" "qt `kf5-config -v | grep Qt | cut -c 5-`"
     echo -n "`uname -n`" "`uptime -p`" #if you want to uncomment strings below, you need change 'echo -n' to 'echo -e'
 #    echo -e "IPv6 `ifconfig teredo | grep 'inet6 2001' | cut -f 10 -d " "`"
-#    echo -n "IPv4 `wget -q -O - http://ip-api.com/json | cut -f 9 -d "," | cut -f 2 -d ":" | sed -e 's/"//g'`"
+#    echo -n "IPv4 `wget -q -O - https://api.ipify.org/`"
