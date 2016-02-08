@@ -29,8 +29,8 @@ import ApplicationLauncher 1.0
 
 Item {
     id: mainWindow
-    Layout.minimumWidth: 360
-    Layout.minimumHeight: 260
+    Layout.minimumWidth: 400
+    Layout.minimumHeight: 300
     property string textColor: Plasmoid.configuration.textColor
     property string textFont: Plasmoid.configuration.textFont
     
@@ -92,19 +92,19 @@ Item {
         interval: 500
     }
     
-    Application{
-        id: launcher  
-        appName: plasmoid.configuration.Command;
+    Application {
+        id: launcher1  
+        appName: plasmoid.configuration.Command1;
 	}
 	Timer {
-		interval: 1000 * plasmoid.configuration.updateInterval;
+		interval: 1000 * plasmoid.configuration.updateInterval1;
 		running: true;
 		repeat: true;
-		onTriggered: out.text = launcher.launchScriptGetSTDOUT(); 
+		onTriggered: out1.text = launcher1.launchScriptGetSTDOUT(); 
 	}
 	
-     PlasmaComponents.Label {
-    	id: out;
+    PlasmaComponents.Label {
+    	id: out1;
         font.family:textFont
         color:textColor
         font.pointSize: 15
@@ -112,6 +112,50 @@ Item {
         anchors {
             top: week.bottom;
             right: week.right;
+        }
+    }
+    Application {
+        id: launcher2  
+        appName: plasmoid.configuration.Command2;
+	}
+	Timer {
+		interval: 1000 * plasmoid.configuration.updateInterval2;
+		running: true;
+		repeat: true;
+		onTriggered: out2.text = launcher2.launchScriptGetSTDOUT(); 
+	}
+	
+    PlasmaComponents.Label {
+    	id: out2;
+        font.family:textFont
+        color:textColor
+        font.pointSize: 15
+    	text: "Default";
+        anchors {
+            top: out1.bottom;
+            left: out1.left;
+        }
+    }
+    Application {
+        id: launcher3  
+        appName: plasmoid.configuration.Command3;
+	}
+	Timer {
+		interval: 1000 * plasmoid.configuration.updateInterval3;
+		running: true;
+		repeat: true;
+		onTriggered: out3.text = launcher3.launchScriptGetSTDOUT(); 
+	}
+	
+    PlasmaComponents.Label {
+    	id: out3;
+        font.family:textFont
+        color:textColor
+        font.pointSize: 15
+    	text: "Default";
+        anchors {
+            top: out2.bottom;
+            left: out2.left;
         }
         /* text: launcher.launchScript(); */
     }
