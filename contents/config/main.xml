@@ -6,22 +6,33 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="textFont" type="String">
-      <label>Font</label>
-      <default>Arial</default>
+    <entry name="textFont" type="string">
+      <default></default>
     </entry>
     <entry name="textColor" type="String">
       <label>Text color</label>
       <default>white</default>
     </entry>
-    <entry name="Command" type="String">
-      <label>Run Command</label>
-      <default>uname -r</default>
+    <entry name="Command1" type="String">
+      <label>Script file</label>
+      <default></default>
     </entry>
-    <entry name="updateInterval" type="Double">
+    <entry name="updateInterval1" type="Double">
       <default>60.0</default>
     </entry>
+    <entry name="Command2" type="String">
+      <label>Script file</label>
+      <default></default>
+    </entry>
+    <entry name="updateInterval2" type="Double">
+      <default>60.0</default>
+    </entry>
+    <entry name="Command3" type="String">
+      <label>Script file</label>
+      <default></default>
+    </entry>
+    <entry name="updateInterval3" type="Double">
+      <default>60.0</default>
     </entry>
   </group>
-
 </kcfg>
