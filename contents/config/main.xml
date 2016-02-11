@@ -34,5 +34,9 @@
     <entry name="updateInterval3" type="Double">
       <default>60.0</default>
     </entry>
+    <entry name="firstWeekOfYearIndex" type="Int">
+            <default>0</default>
+        </entry>
   </group>
+
 </kcfg>
