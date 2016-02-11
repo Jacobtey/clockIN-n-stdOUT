@@ -1,6 +1,7 @@
    /* Copyright 2013 Anant Kamath <kamathanant@gmail.com>
     *Copyright 2015 Robert <robspamm@fastmail.fm>
     *Copyright 2015 David Edmundson <davidedmundson@kde.org>
+    *Copyright 2016 Anselmo L. S. Melo <anselmolsm@gmail.com>
     *Copyright 2016 Ilya Ostapenko <ostapenko.public@gmail.com>
     *
     *This program is free software; you can redistribute it and/or
@@ -26,6 +27,7 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import ApplicationLauncher 1.0
+import org.kde.plasma.calendar 2.0 as PlasmaCalendar
 
 Item {
     id: mainWindow
@@ -44,7 +46,19 @@ Item {
         text: Qt.formatTime( dataSource.data["Local"]["DateTime"],"hh:mm" )
         anchors {
             top: parent.top;
-            horizontalCenter: parent.horizontalCenter;
+            right: parent.right;
+        }
+    }
+    
+    Text {
+        id: year
+        font.family:textFont
+        color: textColor
+        font.pointSize: 40
+        text : Qt.formatDate( dataSource.data["Local"]["DateTime"]," yyyy" )
+        anchors {
+            top: time.bottom;
+            right: time.right;
         }
     }
     
@@ -53,10 +67,10 @@ Item {
         font.family:textFont
         color: textColor
         font.pointSize: 40
-        text : Qt.formatDate( dataSource.data["Local"]["DateTime"]," MMMM yyyy" )
+        text : Qt.formatDate( dataSource.data["Local"]["DateTime"]," MMMM" )
         anchors {
-            top: time.bottom;
-            right: time.right;
+            bottom: year.bottom;
+            right: year.left;
         }
     }
     
@@ -75,21 +89,83 @@ Item {
     Text {
         id: week
         font.family:textFont
-        opacity: 0.7
+        opacity: 0.5
         color: textColor
         font.pointSize: 27
         text : Qt.formatDate( dataSource.data["Local"]["DateTime"],"dddd" )
         anchors {
-            top: date.bottom;
-            right: date.right;
+            top: year.bottom;
+            right: year.right;
         }
     }
-     
+    
+    Text {
+        id: empty
+        font.family:textFont
+        opacity: 0.2
+        color: textColor
+        font.pointSize: 10
+        text : " "
+        anchors {
+            top: week.bottom;
+            right: week.right;
+        }
+    }
+    
+        Text {
+        id: zed
+        font.family:textFont
+        font.capitalization :Font.AllUppercase
+        opacity: 0
+        color: textColor
+        font.pointSize: 13.2
+        text: "..........................."
+        anchors {
+            bottom: year.bottom;
+            right: year.right;
+        }
+    }
+       
     PlasmaCore.DataSource {
         id: dataSource
         engine: "time"
         connectedSources: ["Local"]
         interval: 500
+    }
+    
+    PlasmaComponents.Label {
+        id: label
+        font.family:textFont
+        font.capitalization :Font.AllUppercase
+        color: textColor
+        font.pointSize: 8
+        anchors {
+            verticalCenter: year.verticalCenter;
+            horizontalCenter: zed.left;
+        }
+    
+        PlasmaCalendar.Calendar {
+            id: calendarBackend
+        }
+
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        text: currentWeek()
+
+        function currentWeek() {
+        // Sunday & First 4-day week == ISO-8601, which is followed by Qt
+        var week = calendarBackend.currentWeek()
+
+            if (plasmoid.configuration.firstWeekOfYearIndex == 1) {
+            // Check if January 1st is after Wednesday.
+            var date = new Date(calendarBackend.year, 1, 1);
+            var firstJanDayofWeek = date.getDay();
+            // Wednesday == 3, week starting on Sunday
+            if (firstJanDayofWeek > 3)
+            week = week + 1;
+            }
+        return week < 10 ? "0" + week : week
+        }
     }
     
     Application {
@@ -110,8 +186,8 @@ Item {
         font.pointSize: 15
     	text: "Default";
         anchors {
-            top: week.bottom;
-            right: week.right;
+            top: empty.bottom;
+            right: empty.right;
         }
     }
     Application {
