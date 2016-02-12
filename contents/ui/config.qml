@@ -109,81 +109,82 @@ Item {
             text: "Command #1:";
         }
         RowLayout {	    
-        TextField {
-            id: textField1
-            placeholderText: "Command"
-            text : plasmoid.configuration.Command1;			
-        }
+        	TextField {
+            	id: textField1
+            	placeholderText: "Command"
+            	text : plasmoid.configuration.Command1;			
+        	}
 
-        Label {
-            text: i18n("Update interval:")
-        }
+        	Label {
+            	text: i18n("Update interval:")
+        	}
 
-        SpinBox {
-            id: updateIntervalSpinBox1
-            decimals: 1
-            stepSize: 0.1
-            minimumValue: 0.1
-            maximumValue : 3600
-            suffix: i18nc("Abbreviation for seconds", "s")
-			} 
-         }
+        	SpinBox {
+            	id: updateIntervalSpinBox1
+            	decimals: 1
+            	stepSize: 0.1
+            	minimumValue: 0.1
+            	maximumValue : 3600
+            	suffix: i18nc("Abbreviation for seconds", "s")
+		} 
+        }
           
         Label {	     		
             text: "Command #2:";
         }
 	RowLayout {	    
-        TextField {
-            id: textField2
-            placeholderText: "Command"
-            text : plasmoid.configuration.Command2;			
-        }
+        	TextField {
+            	id: textField2
+            	placeholderText: "Command"
+            	text : plasmoid.configuration.Command2;			
+        	}
 
-        Label {
-            text: i18n("Update interval:")
-        }
+        	Label {
+            	text: i18n("Update interval:")
+        	}
 
-        SpinBox {
-            id: updateIntervalSpinBox2
-            decimals: 1
-            stepSize: 0.1
-            minimumValue: 0.1
-            maximumValue : 3600
-            suffix: i18nc("Abbreviation for seconds", "s")
+        	SpinBox {
+            	id: updateIntervalSpinBox2
+            	decimals: 1
+            	stepSize: 0.1
+            	minimumValue: 0.1
+            	maximumValue : 3600
+            	suffix: i18nc("Abbreviation for seconds", "s")
+        	}
         }
-          }
            
         Label {	     		
             text: "Command #3:";
         }
-		RowLayout {    
-        TextField {
-            id: textField3
-            placeholderText: "Command"
-            text : plasmoid.configuration.Command3;			
-        }
+	
+	RowLayout {    
+        	TextField {
+            	id: textField3
+            	placeholderText: "Command"
+            	text : plasmoid.configuration.Command3;			
+        	}
 
-        Label {
-            text: i18n("Update interval:")
-        }
+        	Label {
+            	text: i18n("Update interval:")
+        	}
 
-        SpinBox {
-            id: updateIntervalSpinBox3
-            decimals: 1
-            stepSize: 0.1
-            minimumValue: 0.1
-            maximumValue : 3600
-            suffix: i18nc("Abbreviation for seconds", "s")
-            }
-           }
+        	SpinBox {
+            	id: updateIntervalSpinBox3
+            	decimals: 1
+            	stepSize: 0.1
+            	minimumValue: 0.1
+            	maximumValue : 3600
+            	suffix: i18nc("Abbreviation for seconds", "s")
+            	}
+        }
            
-      Label {
+	Label {
         text: i18n("First week of year:")
-      }
-      ComboBox {
+      	}
+      	ComboBox {
         id: firstWeekOfYearComboBox
         model: [ "First 4-day week", "Starts on Jan 1st" ]
-      }
+      	}
     
             
         Item {Layout.fillHeight: true}
