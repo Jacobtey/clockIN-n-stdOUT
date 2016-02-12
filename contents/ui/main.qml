@@ -62,10 +62,23 @@ Item {
         }
     }
     
+        Text {
+        id: yeary
+        font.family:textFont
+        color: textColor
+        opacity: 0
+        font.pointSize: 40
+        text : Qt.formatDate( dataSource.data["Local"]["DateTime"],"yy" )
+        anchors {
+            top: time.bottom;
+            right: time.right;
+        }
+    }
+    
     Text {
         id: date
         font.family:textFont
-        color: textColor
+        color: textColor     
         font.pointSize: 40
         text : Qt.formatDate( dataSource.data["Local"]["DateTime"]," MMMM" )
         anchors {
@@ -98,34 +111,7 @@ Item {
             right: year.right;
         }
     }
-    
-    Text {
-        id: empty
-        font.family:textFont
-        opacity: 0.2
-        color: textColor
-        font.pointSize: 10
-        text : " "
-        anchors {
-            top: week.bottom;
-            right: week.right;
-        }
-    }
-    
-        Text {
-        id: zed
-        font.family:textFont
-        font.capitalization :Font.AllUppercase
-        opacity: 0
-        color: textColor
-        font.pointSize: 13.2
-        text: "..........................."
-        anchors {
-            bottom: year.bottom;
-            right: year.right;
-        }
-    }
-       
+           
     PlasmaCore.DataSource {
         id: dataSource
         engine: "time"
@@ -138,10 +124,11 @@ Item {
         font.family:textFont
         font.capitalization :Font.AllUppercase
         color: textColor
-        font.pointSize: 8
+        font.pointSize: 10
         anchors {
             verticalCenter: year.verticalCenter;
-            horizontalCenter: zed.left;
+            horizontalCenter: yeary.left;
+            horizontalCenterOffset: -18;
         }
     
         PlasmaCalendar.Calendar {
@@ -186,8 +173,9 @@ Item {
         font.pointSize: 15
     	text: "Default";
         anchors {
-            top: empty.bottom;
-            right: empty.right;
+            verticalCenter: week.bottom;
+            right: week.right;
+            verticalCenterOffset: 35;
         }
     }
     Application {
