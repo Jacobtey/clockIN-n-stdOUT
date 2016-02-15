@@ -105,7 +105,7 @@ Item {
         opacity: 0.5
         color: textColor
         font.pointSize: 27
-        text : Qt.formatDate( dataSource.data["Local"]["DateTime"],"dddd" )
+        text : Qt.formatDate( dataSource.data["Local"]["DateTime"]," dddd" )
         anchors {
             top: year.bottom;
             right: year.right;
@@ -119,12 +119,24 @@ Item {
         interval: 500
     }
     
-    PlasmaComponents.Label {
+       /* PlasmaComponents.Label {
         id: label
         font.family:textFont
         font.capitalization :Font.AllUppercase
         color: textColor
-        font.pointSize: 10
+        font.pointSize: 18
+        anchors {
+            bottom: week.bottom;
+            right: week.left;
+        }*/
+    
+        PlasmaComponents.Label {
+        id: label
+        font.family:textFont
+        font.weight: Font.Bold 
+        font.capitalization :Font.AllUppercase
+        color: textColor
+        font.pointSize: 11
         anchors {
             verticalCenter: year.verticalCenter;
             horizontalCenter: yeary.left;
@@ -171,7 +183,7 @@ Item {
         font.family:textFont
         color:textColor
         font.pointSize: 15
-    	text: "Default";
+    	text: "";
         anchors {
             verticalCenter: week.bottom;
             right: week.right;
@@ -194,7 +206,7 @@ Item {
         font.family:textFont
         color:textColor
         font.pointSize: 15
-    	text: "Default";
+    	text: "";
         anchors {
             top: out1.bottom;
             left: out1.left;
@@ -216,7 +228,7 @@ Item {
         font.family:textFont
         color:textColor
         font.pointSize: 15
-    	text: "Default";
+    	text: "";
         anchors {
             top: out2.bottom;
             left: out2.left;
