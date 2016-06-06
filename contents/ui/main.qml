@@ -130,6 +130,17 @@ Item {
             right: week.left;
         }*/
     
+        Application {
+        id: launch  
+        appName: PlasmaCalendar.Calendar.calendarBackend;
+	}
+	Timer {
+		interval: 500
+		running: true;
+		repeat: true;
+		onTriggered: label.text = calendarBackend.currentWeek(); 
+	}
+        
         PlasmaComponents.Label {
         id: label
         font.family:textFont
@@ -137,6 +148,8 @@ Item {
         font.capitalization :Font.AllUppercase
         color: textColor
         font.pointSize: 11
+        text: ""
+        
         anchors {
             verticalCenter: year.verticalCenter;
             horizontalCenter: yeary.left;
@@ -149,7 +162,6 @@ Item {
 
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        text: currentWeek()
 
         function currentWeek() {
         // Sunday & First 4-day week == ISO-8601, which is followed by Qt
