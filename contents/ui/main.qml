@@ -56,8 +56,8 @@ Item {
         font.pointSize: 15
     	text: "";
         anchors {
-            verticalCenter: week.bottom;
-            right: week.right;
+            top: parent.top;
+            right: parent.right;
             verticalCenterOffset: 35;
         }
     }
