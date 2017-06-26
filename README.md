@@ -1,4 +1,4 @@
-# clockIN-n-stdOUT
+# stdOUT5
 KDE Plasma 5 port of STDOUT plasmoid
 
 This plasmoid needs an updated version of <a href=https://github.com/Jacobtey/qml-applauncher>qml-applauncher</a>.
