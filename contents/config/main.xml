@@ -15,10 +15,10 @@
     </entry>
     <entry name="Command1" type="String">
       <label>Script file</label>
-      <default>echo 'stdOUT'</default>
+      <default>stdOUT</default>
     </entry>
     <entry name="updateInterval1" type="Double">
-      <default>60.0</default>
+      <default>1.0</default>
     </entry>
     <entry name="Command2" type="String">
       <label>Script file</label>
