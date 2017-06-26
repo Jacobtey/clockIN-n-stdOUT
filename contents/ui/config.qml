@@ -40,7 +40,6 @@ Item {
     property alias cfg_updateInterval2: updateIntervalSpinBox2.value
     property alias cfg_Command3: textField3.text
     property alias cfg_updateInterval3: updateIntervalSpinBox3.value
-    property alias cfg_firstWeekOfYearIndex: firstWeekOfYearComboBox.currentIndex
 
     onCfg_textFontChanged: {
         // HACK by the time we populate our model and/or the ComboBox is finished the value is still undefined
@@ -177,16 +176,7 @@ Item {
             	suffix: i18nc("Abbreviation for seconds", "s")
             	}
         }
-           
-	Label {
-        text: i18n("First week of year:")
-      	}
-      	ComboBox {
-        id: firstWeekOfYearComboBox
-        model: [ "First 4-day week", "Starts on Jan 1st" ]
-      	}
-    
-            
+                       
         Item {Layout.fillHeight: true}
     }
 }
