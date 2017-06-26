@@ -53,7 +53,7 @@ Item {
     	id: out1;
         font.family:textFont
         color:textColor
-        font.pointSize: 15
+        font.pointSize: 10
     	text: "";
         anchors {
             top: parent.top;
@@ -76,7 +76,7 @@ Item {
     	id: out2;
         font.family:textFont
         color:textColor
-        font.pointSize: 15
+        font.pointSize: 10
     	text: "";
         anchors {
             top: out1.bottom;
@@ -98,7 +98,7 @@ Item {
     	id: out3;
         font.family:textFont
         color:textColor
-        font.pointSize: 15
+        font.pointSize: 10
     	text: "";
         anchors {
             top: out2.bottom;
