@@ -11,28 +11,28 @@
     </entry>
     <entry name="textColor" type="String">
       <label>Text color</label>
-      <default>grey</default>
+      <default>red</default>
     </entry>
     <entry name="Command1" type="String">
       <label>Script file</label>
-      <default>contents/scripts/top.sh</default>
+      <default>echo -n "Welcome!"</default>
     </entry>
     <entry name="updateInterval1" type="Double">
       <default>1.0</default>
     </entry>
     <entry name="Command2" type="String">
       <label>Script file</label>
-      <default></default>
+      <default>echo -n "Right click here to make settings"</default>
     </entry>
     <entry name="updateInterval2" type="Double">
-      <default>60.0</default>
+      <default>1.0</default>
     </entry>
     <entry name="Command3" type="String">
       <label>Script file</label>
-      <default></default>
+      <default>echo "and insert script path instead this messages"</default>
     </entry>
     <entry name="updateInterval3" type="Double">
-      <default>60.0</default>
+      <default>1.0</default>
     </entry>
 
 </kcfg>
