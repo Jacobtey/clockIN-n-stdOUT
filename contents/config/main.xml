@@ -15,7 +15,7 @@
     </entry>
     <entry name="Command1" type="String">
       <label>Script file</label>
-      <default>stdOUT</default>
+      <default>contents/scripts/top.sh</default>
     </entry>
     <entry name="updateInterval1" type="Double">
       <default>1.0</default>

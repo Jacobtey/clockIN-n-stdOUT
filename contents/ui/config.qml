@@ -110,7 +110,7 @@ Item {
         RowLayout {	    
         	TextField {
             	id: textField1
-            	placeholderText: "Command"
+            	placeholderText: "Script file"
             	text : plasmoid.configuration.Command1;			
         	}
 
@@ -134,7 +134,7 @@ Item {
 	RowLayout {	    
         	TextField {
             	id: textField2
-            	placeholderText: "Command"
+            	placeholderText: "Script file"
             	text : plasmoid.configuration.Command2;			
         	}
 
@@ -159,7 +159,7 @@ Item {
 	RowLayout {    
         	TextField {
             	id: textField3
-            	placeholderText: "Command"
+            	placeholderText: "Script file"
             	text : plasmoid.configuration.Command3;			
         	}
 
