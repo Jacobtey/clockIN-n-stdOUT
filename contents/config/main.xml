@@ -7,18 +7,18 @@
 
   <group name="General">
     <entry name="textFont" type="string">
-      <default></default>
+      <default>Noto Mono</default>
     </entry>
     <entry name="textColor" type="String">
       <label>Text color</label>
-      <default>white</default>
+      <default>grey</default>
     </entry>
     <entry name="Command1" type="String">
       <label>Script file</label>
-      <default></default>
+      <default>stdOUT</default>
     </entry>
     <entry name="updateInterval1" type="Double">
-      <default>60.0</default>
+      <default>1.0</default>
     </entry>
     <entry name="Command2" type="String">
       <label>Script file</label>
