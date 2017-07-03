@@ -29,7 +29,7 @@
     </entry>
     <entry name="Command3" type="String">
       <label>Script file</label>
-      <default>echo "and insert script path instead this messages"</default>
+      <default>echo "and insert script paths instead these messages"</default>
     </entry>
     <entry name="updateInterval3" type="Double">
       <default>1.0</default>
